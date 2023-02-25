@@ -105,3 +105,8 @@ footer {
 #subscribe-input {
     background-color: #fcf5e1;
 }
+
+.view-details {
+    color: #FFC107;
+    text-decoration: underline;
+}
