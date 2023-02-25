@@ -25,8 +25,8 @@
                     alteration in some form, by injected humou.</p>
                 <div class="form-control">
                     <div class="input-group">
-                        <input type="text" placeholder="Search any food" class="input input-bordered w-full" />
-                        <button class="btn btn-primary">
+                        <input id="user-search" type="text" placeholder="Search any food" class="input input-bordered w-full" />
+                        <button id="btn-search" class="btn btn-primary">
                             Search
                         </button>
                     </div>
@@ -38,7 +38,7 @@
     <main class="main-container">
         <section>
             <h1 class="card-title-head">Your Favourite Food</h1>
-            <div class="card-container" id="card-container">
+            <div class="card-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2" id="card-container">
             </div>
 
             <button id="btn-showall" class="btn-primary">Show All</button>

@@ -1,12 +1,37 @@
-const loadData = () => {
-    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=`
+document.getElementById('btn-search').addEventListener('click', function () {
+    const userSearch = document.getElementById('user-search').value;
+    loadData(userSearch);
+})
+
+const loadData = (value) => {
+    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${value}`
+    console.log(url);
     fetch(url)
         .then(res => res.json())
         .then(data => displayData(data.meals.slice(0, 6)))
 }
 
+const loadDataAll = (value) => {
+    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${value}`;
+    console.log(url);
+    fetch(url)
+        .then(res => res.json())
+        .then(data => displayData(data.meals))
+}
+
+document.getElementById('btn-showall').addEventListener('click', function () {
+    const userSearch = document.getElementById('user-search').value;
+    if (userSearch == '') {
+        loadDataAll('fish');
+    } else {
+        loadDataAll(userSearch);
+    }
+})
+
 const displayData = meals => {
+    console.log(meals);
     const cardContainer = document.getElementById('card-container');
+    cardContainer.innerHTML = "";
     meals.forEach(meal => {
         const mealDiv = document.createElement('div');
         mealDiv.innerHTML = `
@@ -23,4 +48,4 @@ const displayData = meals => {
     })
 }
 
-loadData();
+loadData('fish');
