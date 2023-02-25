@@ -20,11 +20,11 @@ const loadDataAll = (value) => {
 }
 
 document.getElementById('btn-showall').addEventListener('click', function () {
-    const userSearch = document.getElementById('user-search').value;
-    if (userSearch == '') {
+    const userSearchVal = document.getElementById('user-search').value;
+    if (userSearchVal == '') {
         loadDataAll('fish');
     } else {
-        loadDataAll(userSearch);
+        loadDataAll(userSearchVal);
     }
 })
 
